@@ -17,8 +17,8 @@
             <label for="type">Choose type of programmer/coder you want to contact:</label>
             <select name="type" id="type">
                 <option value="app">Application Developer</option>
-                <option value="front">Front-End Developer</option>
-                <option value="back">Back end Developer</option>
+                <option value="front-end">Front-End Developer</option>
+                <option value="back-end">Back end Developer</option>
                 <option value="full">Full Web Developer</option>
             </select>
             <label for="base">Choose developer level:</label>

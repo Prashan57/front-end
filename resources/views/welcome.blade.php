@@ -1,24 +1,26 @@
 @extends("layouts.app")
 
 @section("welcome")
-
     <div>
+        <div class="Video">
         <video autoplay muted loop id="myVideo">
             <source src="/video/mountains.mp4" type="video/mp4">
-    </div>
+        </div>
+        {{--
     <div class="video-front-content">
         <h1>Connect to create a new and better world</h1>
-        <p>Lets create a place where privacy is top priority and the comfort for user is our focus. Build an environment for user-friendly and secure world where everyone can rely on us.
-            <br/>Login and join us to make a community to grow together.
-        </p>
-    </div>
 
+    </div>
+    --}}
+    </div>
 
     <div class="image-1">
         <p> Together We Can Define A New World </p>
         <article>
-            A new interface lightens up new ideas and creativity. Together we can grow steadily and quickly. The more we unite and help each other we can grow more advanced and meaningful interfaces. A new idea is a new creativity and a path to a better way. Growing slow but steadily is the concept i believe on. Building a interface that is user-friendly and easy to use and operate is th target that attracts more user to be more interactive and willing to stay tuned with us. Dealing errors, bugs, and problems together can make us move faster and easily forward.<br/>
-             -- One Step Ahead --
+            A new interface lightens up new ideas and creativity. Together we can grow steadily and quickly. The more we unite and help each other we can grow more advanced and meaningful interfaces. A new idea is a new creativity and a path to a better way. Growing slow but steadily is the concept i believe on. Building a interface that is user-friendly and easy to use and operate is th target that attracts more user to be more interactive and willing to stay tuned with us. Dealing errors, bugs, and problems together can make us move faster and easily forward.
+            Lets create a place where privacy is top priority and the comfort for user is our focus. Build an environment for user-friendly and secure world where everyone can rely on us.
+            <br/>Login and join us to make a community to grow together.
+            <br/>   --> Let's Get One Step Ahead
         </article>
         <div class="image-content">
             <img src="/img/466604321.jpg" alt="together">

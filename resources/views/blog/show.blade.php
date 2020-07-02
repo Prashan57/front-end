@@ -8,9 +8,14 @@
         <p class="base">Base - {{ $blog->base }}</p>
         <p class="toppings">Extra:</p>
         <ul>
+            @if($blog->design!=null)
             @foreach($blog->design as $designs)
                 <li>{{ $designs }}</li>
             @endforeach
+            @else
+                <p>NOT FILLED</p>
+            @endif
+
         </ul>
         <form action="{{ route('blog.destroy', $blog->id) }}" method="POST">
             @csrf
