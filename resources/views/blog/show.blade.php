@@ -6,7 +6,7 @@
         <p class="type">Type - {{ $blog->type }}</p>
         <p class="type">E-mail - {{ $blog->email }}</p>
         <p class="base">Base - {{ $blog->base }}</p>
-        <p class="toppings">Extra:</p>
+        <p class="design">Extra:</p>
         <ul>
             @if($blog->design!=null)
             @foreach($blog->design as $designs)
@@ -15,7 +15,6 @@
             @else
                 <p>NOT FILLED</p>
             @endif
-
         </ul>
         <form action="{{ route('blog.destroy', $blog->id) }}" method="POST">
             @csrf

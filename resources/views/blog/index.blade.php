@@ -10,7 +10,5 @@
                 <h4><a href="{{ route('blog.show', $blogs->id) }}">{{ $blogs->name }}</a></h4>
             </div>
         @endforeach
-
     </div>
-
 @endsection

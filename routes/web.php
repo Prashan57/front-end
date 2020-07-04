@@ -25,10 +25,10 @@ Route::delete('/blogs/{id}', 'BlogController@destroy')->name('blog.destroy')->mi
 
 Auth::routes(
     [
-        "register" => true,
+        "register" => false,
     ]
 );
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', 'Backend\HomeController@index')->name('home');
 
-
+Route::resource("/backend/blog", "Backend\BlogController");
