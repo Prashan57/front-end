@@ -7,7 +7,7 @@
         <section class="content-header">
             <h1>
                 Blog<br/>
-                <small>Display all blog posts</small>
+                <small>Display all blog submits /contacts</small>
             </h1>
             <ol class="breadcrumb">
                 <li>
@@ -16,7 +16,7 @@
                 <li>
                     <a href="{{ route("blog.index") }}">Blog</a>
                 </li>
-                <li class="active">All Posts</li>
+                <li class="active">All Submits</li>
             </ol>
         </section>
 
@@ -25,19 +25,34 @@
             <div class="row">
                 <div class="col-xs-12">
                     <div class="box">
+                        <div class="box-header">
+                            <div class="pull-left">
+                                <a href="{{ route("blog.create") }}" class="btn btn-success">Add New</a>
+                            </div>
+                        </div>
                         <!-- /.box-header -->
                         <div class="box-body ">
+                            @if(session("message"))
+                                <div class="alert alert-info">
+                                    {{ session("message") }}
+                                </div>
+                            @endif
+                            @if( ! $blog->count())
+                            <div class="alert alert-danger">
+                                    <strong>No Record Found</strong>
+                            </div>
+                            @else
                             <table class="table table-bordered">
                                 <thead>
                                 <tr>
-                                    <td>Action</td>
+                                    <th>Action</th>
                                     <td>Name</td>
                                     <td>Type</td>
                                     <td>Email</td>
                                     <td>Base</td>
                                     <td>Extras</td>
+                                    <td>Body</td>
                                     <td>Date</td>
-
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -47,7 +62,7 @@
                                             <a href="{{ route("blog.edit",$blogs->id) }}" class="btn btn-xs btn-default">
                                                 <i class="fa fa-edit"></i>
                                             </a>
-                                            <a href="{{ route("blog.destroy", $blogs->id) }}" class="btn btn-xs btn-danger">
+                                            <a href="{{ route("destroy", $blogs->id) }}" class="btn btn-xs btn-danger">
                                                 <i class="fa fa-times"></i>
                                             </a>
                                         </td>
@@ -66,6 +81,7 @@
                                                 @endif
                                             </ul>
                                         </td>
+                                        <td>{{ $blogs->body }}</td>
                                         <td>
                                             <abbr title="{{ $blogs->dateFormatted(true) }}">{{ $blogs-> dateFormatted() }}</abbr> |
                                             {!! $blogs->publicationLabel() !!}
@@ -74,6 +90,7 @@
                                 @endforeach
                                 </tbody>
                             </table>
+                                @endif
                         </div>
                         <!-- /.box-body -->
                         <div class="box-footer clearfix">
@@ -87,15 +104,22 @@
                             <li></li>
                             </ul>
                             </div>
+                            <div class="pull-right">
+                                <small> {{ $blogCount }} {{ Str::plural('Item', $postCount ?? '') }}</small>
+                            </div>
                         </div>
                     </div>
-                    <div class="pull-right">
-                        <small> {{ $blogCount }} {{ Str::plural('Item', $postCount ?? '') }}</small>
-                    </div>
+
                     <!-- /.box -->
                 </div>
             </div>
             <!-- ./row -->
         </section>
     </div>
+@endsection
+
+@section("script")
+    <script type="text/javascript">
+        $("ul.pagination").addClass("no margin pagination-sm");
+    </script>
 @endsection

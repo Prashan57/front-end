@@ -28,6 +28,7 @@
             </span>
                 </a>
                 <ul class="treeview-menu">
+                    <li><a href="{{ url("/backend/blog/admin") }}"><i class="fa fa-circle-o"></i> Admin Adds</a></li>
                     <li><a href="{{ route("blog.index") }}"><i class="fa fa-circle-o"></i> All Posts</a></li>
                     <li><a href="{{ route("blog.create")}}"><i class="fa fa-circle-o"></i> Add New</a></li>
                 </ul>

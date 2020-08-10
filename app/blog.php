@@ -13,10 +13,18 @@ class blog extends Model
         'design' => 'array',
     ];
 
+    protected $fillable=[
+        "title",
+        "body",
+        "image",
+        "category",
+        "reply"
+    ];
+
     public function dateFormatted($showTimes = false)
     {
         $format = "d/m/y";
-        if ($showTimes) $format = $format . "YYYY-MM-DD";
+        if ($showTimes) $format = $format . "H:i:s";
         return $this->created_at->format($format);
     }
 

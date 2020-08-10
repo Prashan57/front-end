@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Blog | Dashboard</title>
+    <title>@yield("title","Blog | Dashboard")</title>
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <!-- Bootstrap 3.3.6 -->
@@ -54,5 +54,7 @@
 <script src="/back-end/js/bootstrap.min.js"></script>
 <!-- AdminLTE App -->
 <script src="/back-end/js/app.min.js"></script>
+
+@yield("script")
 </body>
 </html>

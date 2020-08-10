@@ -36,6 +36,7 @@ class BlogController extends Controller
             $blogs->base = request('base');
             $blogs->email = request('email');
             $blogs->design = request('design');
+            $blogs->body = request('body');
 
             $blogs->save();
 

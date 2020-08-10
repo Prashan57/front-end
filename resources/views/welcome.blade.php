@@ -39,7 +39,7 @@
             <div class="form">
                 <h5>Contact Me</h5>
                 <p>Lets stay tuned and connected.</p>
-                <form action="{{ route("blog.create") }}" method="head">
+                <form action="{{ route("create") }}" method="head">
                     @csrf
                     <input type="submit" value="Join Us">
                 </form>

@@ -17,15 +17,17 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/blogs', 'BlogController@index')->name('blog.index')->middleware('auth');
-Route::get('/blogs/create', 'BlogController@create')->name('blog.create');
-Route::post('/blogs', 'BlogController@store')->name('blog.store');
-Route::get('/blogs/{id}', 'BlogController@show')->name('blog.show')->middleware('auth');
-Route::delete('/blogs/{id}', 'BlogController@destroy')->name('blog.destroy')->middleware('auth');
+Route::get('/blogs', 'BlogController@index')->name('index')->middleware('auth');
+Route::get('/blogs/create', 'BlogController@create')->name('create');
+Route::post('/blogs', 'BlogController@store')->name('store');
+Route::get('/blogs/{id}', 'BlogController@show')->name('show')->middleware('auth');
+Route::delete('/blogs/{id}', 'BlogController@destroy')->name('destroy')->middleware('auth');
+Route::get("/backend/blog/admin", "Backend\AdminController@admin")->name("blog.admins")->middleware("auth");
+Route::post("/backend/blog/admin", "Backend\AdminController@store")->name("admin.store")->middleware("auth");
 
 Auth::routes(
     [
-        "register" => false,
+        "register" => true,
     ]
 );
 
